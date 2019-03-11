@@ -1,11 +1,14 @@
-import * as React from 'react'
+import React from 'react'
+import {useState} from "react";
 
-class Hello extends React.Component {
-    render() {
-        return <div>
-            <h1>Hello React</h1>
-        </div>
-    }
+export default function Hello() {
+  const [count, setCount] = useState(0)
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
 }
-
-export default Hello
